@@ -1,0 +1,26 @@
+
+<nav class="navbar">
+  <a href="#" class="logo">
+    <span class="logo-icon">P</span>
+    Portfolio<span class="dot">.</span>
+  </a>
+
+  <button
+    class="menu-toggle"
+    (click)="menuOpen = !menuOpen"
+    aria-label="Toggle navigation"
+    [attr.aria-expanded]="menuOpen">
+    ☰
+  </button>
+
+  <ul class="nav-links" [class.active]="menuOpen">
+    <li *ngFor="let item of navLinks">
+      <a
+        [href]="item.link"
+        [class.contact-link]="item.name === 'Contact Us'"
+        (click)="menuOpen = false">
+        {{ item.name }}
+      </a>
+    </li>
+  </ul>
+</nav>
