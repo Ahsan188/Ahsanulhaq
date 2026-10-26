@@ -1,1 +1,133 @@
-<p>contact-us works!</p>
+
+<section class="contact-section">
+  <div class="contact-container">
+
+    <!-- Heading -->
+    <div class="contact-heading">
+      <p class="section-label">LET'S CONNECT</p>
+
+      <h1>Contact <span>Me.</span></h1>
+
+      <p>
+        Have a project in mind or want to work together?
+        I'd love to hear from you. Let's create something amazing!
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h2>Let's Talk</h2>
+
+        <p class="info-description">
+          I'm always open to discussing new projects, creative ideas,
+          and opportunities to be part of your vision.
+        </p>
+
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div>
+            <h3>Email Me</h3>
+            <a href="mailto:yourname@example.com">
+              yourname@example.com
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">⌖</div>
+          <div>
+            <h3>Location</h3>
+            <p>Your City, Your Country</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">↗</div>
+          <div>
+            <h3>Let's Connect</h3>
+            <p>Available for freelance opportunities</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/" target="_blank"
+             rel="noopener noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://linkedin.com/" target="_blank"
+             rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+          <a href="https://instagram.com/" target="_blank"
+             rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-card">
+        <h2>Send Me a Message <span>✦</span></h2>
+
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="John Doe"
+                ngModel
+                required
+                minlength="2">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="john@example.com"
+                ngModel
+                required
+                email>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              id="subject"
+              type="text"
+              name="subject"
+              placeholder="Project discussion"
+              ngModel
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell me about your project..."
+              ngModel
+              required
+              minlength="10"></textarea>
+          </div>
+
+          <button type="submit" [disabled]="contactForm.invalid">
+            Send Message <span>↗</span>
+          </button>
+
+          <p class="form-status" *ngIf="statusMessage"
+             role="status">
+            {{ statusMessage }}
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

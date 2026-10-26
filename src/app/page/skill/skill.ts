@@ -1,8 +1,11 @@
+
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-skill',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './skill.html',
   styleUrl: './skill.css',
 })
